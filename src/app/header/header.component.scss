@@ -1,0 +1,32 @@
+@import '~src/sass/variables';
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    display: inline;
+}
+
+.logo img{
+    position: relative;
+    top: 20%;
+}
+    ul{
+        display: inline;
+    }
+
+li{
+        list-style-type: none;
+        display: inline;
+        padding: 1em;
+        justify-content: flex-end;
+        color: $gray-violet;
+    }
+li:hover{
+    font-weight: 800;
+    color: $dark-violet;
+    cursor: pointer;
+}
