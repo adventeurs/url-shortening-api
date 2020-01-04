@@ -1,0 +1,9 @@
+.hero {
+  display: flex; }
+
+.hero-cta {
+  flex-basis: 45%; }
+
+.hero-img {
+  flex-basis: 55%;
+  left: 20%; }

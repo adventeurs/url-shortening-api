@@ -1,0 +1,29 @@
+@import '~src/sass/variables';
+
+.footer{
+    color: white;
+    background: $very-dark-violet;
+    display: flex;
+    flex-direction: row;
+    padding: 2em 10%;
+}
+
+.footer * {
+    flex: 1 1 auto;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer img{
+    color: white;
+}
+
+.footer div h5{
+    margin-bottom: 1em;
+}
+.footer div ul li{
+    color: $gray;
+    list-style-type: none;
+    padding: 5px 0;
+}

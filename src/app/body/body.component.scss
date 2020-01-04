@@ -1,0 +1,44 @@
+@import '~src/sass/variables';
+@import '~src/sass/styles';
+
+.container{
+    padding: 0 10%;
+    margin-top: 1em;
+}
+
+.hero{
+    display: flex;
+    margin-top: 3em;
+}
+    .hero-cta{
+        flex-basis: 50%;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-cta h1{
+        font-size: 50px;
+        margin-bottom: 0;
+    }
+    .hero-img{
+        width: 50%;
+    }
+
+.advanced-statistics{
+    background-color: $gray;
+    text-align: center;
+    padding: 2em;
+}
+
+.advanced-statistics p{
+    max-width: 500px;
+    margin: auto;
+}
+
+.boost{
+    background-color: $dark-violet;
+    text-align: center;
+    padding: 2em;
+   color: white;
+}
+

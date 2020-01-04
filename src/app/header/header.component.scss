@@ -24,9 +24,9 @@ li{
         padding: 1em;
         justify-content: flex-end;
         color: $gray-violet;
+        font-weight: 400;
     }
 li:hover{
-    font-weight: 800;
     color: $dark-violet;
     cursor: pointer;
 }

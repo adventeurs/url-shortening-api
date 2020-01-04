@@ -1,0 +1,15 @@
+@import './variables';
+
+body{
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+}
+
+h1, h2, h3, p, li{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+h1{
+    color: $dark-violet;
+}
