@@ -2,8 +2,19 @@
 $cyan: hsl(180, 66%,49%);
 $dark-violet: hsl(257, 27%, 26%);
 
-// Neutral Colors
-$gray: hsl(0, 0%, 75%);
+// Neutral Colors f0f1f6
+$gray: #f0f1f6;
+$dark-gray: hsl(0, 0%, 75%);
 $gray-violet: hsl(257, 7%, 63%);
 $dark-blue: hsl(255, 11%, 22%);
 $very-dark-violet: hsl(260, 8%, 14%);
+
+@mixin roundedBtn{
+    border-radius: 30px;
+    background-color: $cyan;
+    border-color: $cyan;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+}

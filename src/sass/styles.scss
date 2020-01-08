@@ -3,6 +3,7 @@
 body{
     font-size: 18px;
     font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -12,4 +13,13 @@ h1, h2, h3, p, li{
 
 h1{
     color: $dark-violet;
+}
+
+.roundedBtn{
+    @include roundedBtn;
+}
+
+.roundedBtnBig{
+    @include roundedBtn;
+    padding: 10px 30px;
 }
