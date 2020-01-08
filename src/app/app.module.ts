@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { ShortenLinkComponent } from './shorten-link/shorten-link.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LinksComponent } from './shorten-link/links/links.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     BodyComponent,
-    ShortenLinkComponent
+    ShortenLinkComponent,
+    LinksComponent
   ],
   imports: [
     BrowserModule,
