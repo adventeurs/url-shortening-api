@@ -1,0 +1,23 @@
+<form [formGroup]='rForm' (ngSubmit)="shortenUrl(rForm.value)" >
+    <div class="rForm">
+    <input 
+        formControlName="url" 
+        type="text"
+        id="url"
+        class="form-control"
+        placeholder="Shorten a link here...">
+    <div *ngIf="url.touched && url.invalid" class="alert">
+        <div *ngIf="url.errors.required">URL required.</div>
+        <div *ngIf="url.errors.pattern">Please enter valid URL.</div>
+    </div>
+    <button (click)='true'>Shorten it!</button>
+</div>
+<div class="links">
+    <div *ngFor = "let item of shortenedLinks" class="link-container">
+            <p>{{item.url}}</p>
+            <div>
+                <a class="short-link" href="https://rel.ink/{{item.hasid}}">https://rel.ink/{{item.hashid}}</a>
+                <button class="roundedBtn-2">Copy</button>
+            </div>
+    </div>
+</div>

@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class ShortenLinkComponent {
   reLinkAddr = 'https://rel.ink/api/links/'
   regex: string = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
-  shortenedLinks =  localStorage.getItem('shortenedLinks') ? JSON.parse(localStorage.getItem("shortenedLinks")) : [];
+  shortenedLinks: Array< any > =  localStorage.getItem('shortenedLinks') ? JSON.parse(localStorage.getItem("shortenedLinks")) : [];
 
   rForm = new FormGroup({
     url: new FormControl( '', [
@@ -41,7 +41,7 @@ export class ShortenLinkComponent {
         JSON.stringify(this.shortenedLinks)
       )
       console.log(this.shortenedLinks) 
-      
+
       this.rForm.reset()
     } 
   }

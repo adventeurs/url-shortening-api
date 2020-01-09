@@ -23,3 +23,10 @@ h1{
     @include roundedBtn;
     padding: 10px 30px;
 }
+
+.roundedBtn-2{
+    @include roundedBtn;
+    border-radius: 5px !important;
+    font-size: 18px;
+    padding: 12px 30px;
+}
