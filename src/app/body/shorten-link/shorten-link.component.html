@@ -1,18 +1,20 @@
-<form [formGroup]='rForm' (ngSubmit)="shortenUrl(rForm.value)" >
+<form [formGroup]='rForm' >
     <div class="rForm">
     <div class="rForm-wrap">
         <input 
+            (keyup.enter)="shortenUrl(rForm.value)"
+            [ngClass]="status ? 'form-ready' : 'alert-form'"
             formControlName="url" 
             type="text"
             id="url"
-            class="form-control alert-form"
+            class="form-control"
             placeholder="Shorten a link here...">
-        <div *ngIf="url.touched && url.invalid" class="alert">
-            <div *ngIf="url.errors.required">URL required.</div>
-            <div *ngIf="url.errors.pattern">Please enter valid URL.</div>
+        <div *ngIf="!status" class="alert">
+            <div *ngIf="url.errors.required">Please add a link</div>
+            <div *ngIf="url.errors.pattern">Please enter valid link</div>
         </div>
     </div>
-    <button (click)='true' class="roundedBtn-2">Shorten it!</button>
+    <button (click)="shortenUrl(rForm.value)" class="roundedBtn-2">Shorten it!</button>
 </div>
 </form>
 <div class="links">

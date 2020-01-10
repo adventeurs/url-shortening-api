@@ -15,6 +15,10 @@ h1{
     color: $dark-violet;
 }
 
+h2{
+    font-size: 2em;
+}
+
 .roundedBtn{
     @include roundedBtn;
 }
@@ -26,7 +30,7 @@ h1{
 
 .roundedBtnBig{
     @include roundedBtn;
-    padding: 10px 30px;
+    padding: 12px 35px;
 }
 
 .roundedBtn-2{

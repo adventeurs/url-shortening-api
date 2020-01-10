@@ -8,7 +8,7 @@
 
 .hero{
     display: flex;
-    margin-top: 3em;
+    margin: 3em 0;
 }
     .hero-cta{
         flex-basis: 50%;
@@ -22,11 +22,14 @@
         line-height: 1.2em;
     }
     .hero-cta p{
-        margin-top: 0;
-        color: $dark-violet;
+        margin: 0 0 2em 0;
+        color: $dark-gray;
+        padding-right: 1em;
+
     }
     .hero-img{
         width: 50%;
+        padding-left: 1em;
     }
 
 .advanced-statistics{
@@ -37,18 +40,25 @@
 .advanced-statistics p{
     max-width: 500px;
     margin: auto;
+    color: $dark-gray;
 }
 
 .boost{
     background-color: $dark-violet;
     text-align: center;
-    padding: 2em;
+    padding: 2em 2em 2.5em 2em;
    color: white;
+   background-image: url(/assets/img/bg-boost-desktop.svg);
+   background-position: center;
+}
+
+.boost h2{
+    margin-top: 0;
 }
 
 .call{
     background-color: $gray;
-    padding: 10% 10%;
+    padding: 0 10% 10% 10%;
 }
 
 .bar::after{

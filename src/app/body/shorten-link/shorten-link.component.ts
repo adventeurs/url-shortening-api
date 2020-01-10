@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 
 export class ShortenLinkComponent {
+  status: boolean = true;
   reLinkAddr = 'https://rel.ink/api/links/'
   regex: string = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
   shortenedLinks: Array< any > =  localStorage.getItem('shortenedLinks') ? JSON.parse(localStorage.getItem("shortenedLinks")) : [];
@@ -32,6 +33,7 @@ export class ShortenLinkComponent {
   }
 
   shortenUrl(value){
+
     if(this.rForm.valid){
     let hello =  this.http.post(this.reLinkAddr, value)
       .subscribe(val => this.shortenedLinks.push(val))
@@ -40,9 +42,15 @@ export class ShortenLinkComponent {
         "shortenedLinks",
         JSON.stringify(this.shortenedLinks)
       )
-      console.log(this.shortenedLinks) 
 
-      this.rForm.reset()
-    } 
+      this.rForm.reset() 
+      } 
+
+    else {
+        console.log(this.status)
+        this.status = false;
+        console.log(this.status)
+      }
+
   }
 }
