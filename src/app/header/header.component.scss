@@ -1,33 +1,106 @@
 @import '~src/sass/variables';
 
 
-.container{
+.nav-bar{
+height: 12.5vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links{
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    padding-left: 1.5em;
 }
 
-.logo{
-    display: inline;
-}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
 
-.logo img{
-    position: relative;
-    top: 20%;
-}
-    ul{
-        display: inline;
+  li{
+      display: inline;
+      padding: 1em;
+      color: $dark-gray;
+  }
+
+  li a{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: $dark-gray;
+  }
+
+  @media only screen and (max-width: 680px) {
+      .nav-links{
+          display: none;
+      }
+
+      .mobile-nav{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        margin: auto !important;
+        width: 80%;
+        background: $dark-violet;
+        border-radius: 10px;
+        top: 6em;
+      }
+
+      .sign-up-links{
+          border-top: 1px solid $gray-violet;
+      }
+
+      .sign-up-links li{
+          color: white;
+      }
+
+      .mobile-nav ul{
+          flex-direction: column;
+          padding: 1em;
+      }
+
+      .mobile-nav ul li a{
+          color: white;
+      }
+
+      .nav-bar{
+          justify-content: space-between;
+      }
+
+    .menu {
+        position: relative;
+        display:  inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 25px;
+        margin-right: 0;
     }
-
-li{
-        list-style-type: none;
-        display: inline;
-        padding: 1em;
-        justify-content: flex-end;
-        color: $gray-violet;
-        font-weight: 400;
+    .menu span {
+        margin: 0 auto;
+        position: relative;
+        top: 12px;
     }
-li:hover{
-    color: $dark-violet;
-    cursor: pointer;
-}
-
+    .menu span:before, .menu span:after {
+        position: absolute;
+        content: '';
+    }
+    .menu span, .menu span:before, .menu span:after {
+        width: 2em;
+        height: 5px;
+        border-radius: 5px;
+        background-color: $dark-gray;
+        display: block;
+    }
+    .menu span:before {
+        margin-top: -12px;
+    }
+    .menu span:after {
+        margin-top: 12px;
+    }
+  }

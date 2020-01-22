@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: row;
     padding: 2em 10%;
+    flex-wrap: wrap;
 }
 
 .footer * {
@@ -44,4 +45,16 @@
 .social{
     display: flex;
     justify-content: end;
+}
+
+@media only screen and (max-width: 680px){
+    .footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer * {
+        padding: .5em;
+    }
+
 }

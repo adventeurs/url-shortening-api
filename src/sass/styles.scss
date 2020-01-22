@@ -13,6 +13,18 @@ h1, h2, h3, p, li{
 
 h1{
     color: $dark-violet;
+    font-size: 65px;
+}
+
+@media only screen and (max-width: 680px){
+    h1{
+        font-size: 50px !important;
+        text-align: center;
+    }
+    .roundedBtn, .roundedBtnBig, .roundedBtn-2, .roundedBtn-copied {
+        margin: auto;
+        width: 100%;
+    }
 }
 
 h2{
@@ -37,5 +49,14 @@ h2{
     @include roundedBtn;
     border-radius: 10px !important;
     font-size: 18px;
-    padding: 12px 30px;
+    padding: 12px 2rem;
+}
+
+.roundedBtn-copied{
+    @include roundedBtn;
+    border-radius: 10px !important;
+    font-size: 18px;
+    padding: 12px 1.3rem;
+    background-color: $dark-violet;
+    border-color: $dark-violet;
 }
