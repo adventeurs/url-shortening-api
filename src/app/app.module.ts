@@ -10,6 +10,7 @@ import { BodyComponent } from './body/body.component';
 import { ShortenLinkComponent } from './body/shorten-link/shorten-link.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
+import { CardComponent } from './body/card/card.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     HeaderComponent,
     FooterComponent,
     BodyComponent,
-    ShortenLinkComponent
+    ShortenLinkComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

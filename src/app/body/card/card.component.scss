@@ -1,0 +1,44 @@
+@import '~src/sass/variables';
+@import '~src/sass/styles';
+
+.links{
+    background-color: $gray;
+    padding: 4.5em 10%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+}
+
+.short-link{
+    color: $cyan;
+}
+
+.link-container div{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.link-container div a {
+    padding-right: 1em;
+    text-decoration: none;
+}
+
+.links{
+    background-color: $gray;
+    padding: 4.5em 10%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+}
+
+
+.link-container{
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 1em;
+    margin-top: 1em;
+    flex-wrap: wrap;
+}

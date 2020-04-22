@@ -1,15 +1,6 @@
 @import '~src/sass/variables';
 @import '~src/sass/styles';
 
-.link-container{
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 1em;
-    margin-top: 1em;
-    flex-wrap: wrap;
-}
 
 @media only screen and (max-width: 680px){
     .link-container div{

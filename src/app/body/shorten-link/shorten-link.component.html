@@ -2,36 +2,23 @@
     <div class="rForm">
     <div class="rForm-wrap">
         <input 
-            (keyup.enter)="shortenUrl(rForm.value)"
-            [ngClass]="status ? 'form-ready' : 'alert-form'"
+            (keyup.enter)="shortenUrl(url.value)"
+            [ngClass]="url.touched && !url.valid ? 'alert-form' : 'form-ready'"
             formControlName="url" 
             type="text"
             id="url"
             class="form-control"
             placeholder="Shorten a link here...">
-        <div *ngIf="!status" class="alert">
+        <div *ngIf="url.touched && !url.valid" class="alert">
             <div *ngIf="url.errors.required">Please add a link</div>
             <div *ngIf="url.errors.pattern">Please enter valid link</div>
         </div>
     </div>
-    <button (click)="shortenUrl(rForm.value)" class="roundedBtn-2">Shorten it!</button>
+    <button (click)="shortenUrl(url.value)" class="roundedBtn-2">Shorten it!</button>
 </div>
 </form>
 <div class="links">
-    <div *ngFor = "let item of shortenedLinks" class="link-container">
-            <p>{{item.url}}</p>
-            <div>
-                <a class="short-link" href="https://rel.ink/{{item.hashid}}">https://rel.ink/{{item.hashid}}</a>
-                <button class="roundedBtn-2" 
-                        *ngIf="!copied"
-                        (click)="copyToClipboard(copyButton.value)"
-                        value="https://rel.ink/{{item.hashid}}"
-                        #copyButton>
-                        Copy</button>
-                <button class="roundedBtn-copied" 
-                        *ngIf='copied'
-                        >
-                        Copied!</button>
-            </div>
+    <div *ngFor = "let item of shortenedLinks" >
+            <card [item]='item'></card>
     </div>
 </div>

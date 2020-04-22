@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
@@ -13,14 +13,11 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class ShortenLinkComponent {
   status: boolean = true;
   reLinkAddr = 'https://rel.ink/api/links/'
-  regex: string = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
-  shortenedLinks: Array< any > =  localStorage.getItem('shortenedLinks') ? JSON.parse(localStorage.getItem("shortenedLinks")) : [];
-  copied: boolean = false;
+  shortenedLinks: Array< any > =  localStorage.getItem('shortenedLinks') ? [...JSON.parse(localStorage.getItem("shortenedLinks"))] : [];
 
   rForm = new FormGroup({
     url: new FormControl( '', [
-      Validators.required,
-      Validators.pattern(this.regex)
+      Validators.required
     ])
   });
 
@@ -33,45 +30,40 @@ export class ShortenLinkComponent {
   
   }
 
+  isUrl( value ){
+    let regex = new RegExp(/^(https?:\/\/)?[\w.-]+\.[a-z]{2,}(\/?|(\/[\w.?#$%&=-]+\/?)*)$/);
+    return regex.test(value);
+  }
+
+  containsProtocol( value ){
+    const regex = new RegExp(/^https?:\/\//);
+    return regex.test(value);
+  }
+
   shortenUrl(value){
+    if( this.isUrl(value)){
+      if(!this.containsProtocol(value))
+        value = `https://${value}`;
 
-    if(this.rForm.valid){
-    let hello =  this.http.post(this.reLinkAddr, value)
-      .subscribe(val => this.shortenedLinks.push(val))
+        let url = { url: value };
 
-      localStorage.setItem(
-        "shortenedLinks",
-        JSON.stringify(this.shortenedLinks)
-      )
+        this.http.post(this.reLinkAddr, url)
+          .subscribe(val => {
+            this.shortenedLinks.push(val);
 
-      this.rForm.reset() 
-      } 
+            localStorage.setItem(
+              "shortenedLinks",
+              JSON.stringify(this.shortenedLinks)
+            );
+          });
 
-    else {
-        console.log(this.status)
-        this.status = false;
-        console.log(this.status)
+        this.rForm.reset() ;
+      
       }
-
+      else{
+        this.url.setErrors({'required': true})
+      }
   }
 
-  copyToClipboard(value: string){
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = value;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
-
-    this.copied = !this.copied
-
-    setTimeout( ()=>{
-      this.copied = !this.copied
-    }, 1500)
-  }
+  
 }
